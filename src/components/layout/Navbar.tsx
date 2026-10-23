@@ -38,11 +38,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEnquiryModal }) => {
             
             {/* Logo & Brand Identity */}
             <Link to="/" className="flex items-center gap-2.5 group shrink-0">
-              <div className="w-9 h-9 rounded-full overflow-hidden bg-[#082B5C] border border-slate-200 flex items-center justify-center shrink-0 shadow-2xs">
+              <div className="w-10 h-10 rounded-full overflow-hidden flex items-center justify-center shrink-0 shadow-xs">
                 <img 
-                  src="/logo-badge.svg" 
-                  alt="Burhani General Supplies Logo" 
-                  className="w-full h-full object-contain p-0.5"
+                  src="/logo-badge.png" 
+                  alt="Burhani General Supplies B-G Logo" 
+                  className="w-full h-full object-contain"
                 />
               </div>
               <div className="flex flex-col">
@@ -148,11 +148,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEnquiryModal }) => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-between">
           
           <Link to="/" className="flex items-center gap-3 group">
-            <div className="w-9 h-9 rounded-full overflow-hidden bg-[#082B5C] border border-slate-200 flex items-center justify-center shrink-0 shadow-xs">
+            <div className="w-10 h-10 rounded-full overflow-hidden flex items-center justify-center shrink-0 shadow-xs">
               <img 
-                src="/logo-badge.svg" 
-                alt="Burhani General Supplies Logo" 
-                className="w-full h-full object-contain p-0.5"
+                src="/logo-badge.png" 
+                alt="Burhani General Supplies B-G Logo" 
+                className="w-full h-full object-contain"
               />
             </div>
             <div className="flex flex-col">

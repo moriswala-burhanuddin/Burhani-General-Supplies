@@ -10,11 +10,11 @@ export const Footer: React.FC = () => {
         {/* Brand Banner Row */}
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-8 border-b border-[#E5E2D9]">
           <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-full overflow-hidden border border-slate-300 bg-[#082B5C] flex items-center justify-center shrink-0 shadow-xs">
+            <div className="w-14 h-14 rounded-full overflow-hidden flex items-center justify-center shrink-0 shadow-xs">
               <img 
-                src="/logo-badge.svg" 
-                alt="Burhani General Supplies" 
-                className="w-full h-full object-contain p-1"
+                src="/logo-badge.png" 
+                alt="Burhani General Supplies B-G Logo" 
+                className="w-full h-full object-contain"
               />
             </div>
             <div>
