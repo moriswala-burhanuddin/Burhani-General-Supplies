@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2026/svg" viewBox="0 0 100 100" fill="none">
+  <circle cx="50" cy="50" r="48" fill="#082B5C" stroke="#168ACB" stroke-width="3"/>
+  <circle cx="50" cy="50" r="42" fill="#EBF5FB"/>
+  <circle cx="50" cy="50" r="38" fill="#168ACB"/>
+  <!-- BG monogram -->
+  <path d="M34 26H52C58.6274 26 64 30.0294 64 35C64 38.647 60.9163 41.7456 56.4 43.1C61.8 44.4 66 48.2 66 53.5C66 59.8513 59.732 65 52 65H34V26Z" fill="#082B5C"/>
+  <path d="M42 33V43H50C53.3137 43 56 40.7614 56 38C56 35.2386 53.3137 33 50 33H42Z" fill="#FFFFFF"/>
+  <path d="M42 49V58H51C54.866 58 58 55.3137 58 53.5C58 51.6863 54.866 49 51 49H42Z" fill="#FFFFFF"/>
+  <!-- G element accent -->
+  <path d="M63 48V62H49" stroke="#49C4E8" stroke-width="4" stroke-linecap="round"/>
+</svg>

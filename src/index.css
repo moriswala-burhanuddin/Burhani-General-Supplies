@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-page: #FFFFFF;
+    --text-primary: #111827;
+    --text-secondary: #4B5563;
+    --brand-blue: #0D6EFD;
+    --brand-yellow: #FFC107;
+    --brand-red: #E53935;
+    --border-color: #E5E7EB;
+  }
+
+  html, body {
+    background-color: #FFFFFF;
+    color: #111827;
+    font-family: 'Manrope', system-ui, -apple-system, sans-serif;
+    letter-spacing: -0.01em;
+  }
+
+  p, span, a, input, select, textarea, button, small, li, label, div {
+    font-family: 'Manrope', system-ui, -apple-system, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6, .font-display {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    letter-spacing: -0.025em;
+    font-weight: 800;
+  }
+}
+
+.font-script {
+  font-family: 'Caveat', cursive;
+}
+
+/* Unified Button Tokens */
+.btn-pill-yellow {
+  background-color: #F8C928;
+  color: #111827;
+  font-weight: 700;
+  border-radius: 9999px;
+  padding: 0.6rem 1.35rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+  font-size: 0.875rem;
+  font-family: 'Manrope', sans-serif;
+}
+
+.btn-pill-yellow:hover {
+  background-color: #FFD54F;
+  transform: translateY(-1px);
+}
+
+.btn-pill-dark {
+  background-color: #111827;
+  color: #FFFFFF;
+  font-weight: 700;
+  border-radius: 9999px;
+  padding: 0.6rem 1.35rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+  font-size: 0.875rem;
+  font-family: 'Manrope', sans-serif;
+}
+
+.btn-pill-dark:hover {
+  background-color: #1F2937;
+  transform: translateY(-1px);
+}
+
+.btn-pill-outline {
+  background-color: transparent;
+  color: #111827;
+  font-weight: 600;
+  border: 1px solid #D1D5DB;
+  border-radius: 9999px;
+  padding: 0.6rem 1.35rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+  font-size: 0.875rem;
+  font-family: 'Manrope', sans-serif;
+}
+
+.btn-pill-outline:hover {
+  background-color: #FFFFFF;
+  border-color: #9CA3AF;
+}
+
+/* Circular Arrow Buttons */
+.arrow-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  font-weight: bold;
+}
+
+.arrow-circle:hover {
+  transform: scale(1.08);
+}
