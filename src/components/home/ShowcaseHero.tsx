@@ -33,311 +33,385 @@ export const ShowcaseHero: React.FC<ShowcaseHeroProps> = ({ onOpenEnquiryModal }
   const [activeTab, setActiveTab] = useState<'OVERVIEW' | 'GALLERY' | 'FEATURES' | 'SPECIFICATIONS' | 'COMPARE'>('OVERVIEW');
   const [activeHotspot, setActiveHotspot] = useState<string | null>(null);
 
-  // 4 Genuine Commercial Vehicles with Transparent PNG Cutouts!
+  // 9 Authentic Showroom Vehicles with Transparent PNG Cutouts!
   const products: ProductData[] = [
     {
-      id: 'atul-rik',
+      id: 'atul-petrol',
       categoryCode: '01',
       categoryLabel: 'TUK-TUKS',
       titleLine1: 'ATUL Rik',
       titleLine2: 'Petrol Tuk-Tuk',
-      title: 'ATUL Rik Petrol Tuk-Tuk',
-      subtitle: 'A reliable and practical choice for everyday mobility and business needs in Mtwapa.',
+      title: 'Atul petrol',
+      subtitle: 'The gold standard in urban passenger mobility across the Coast region. High fuel economy and reinforced steel frame.',
       prevPrice: 'KES 425,500',
       price: 'KES 390,000',
-      badge: 'OFFER',
-      backdropWord: 'RIDE',
-      image: '/images/atul-rik-Photoroom.png',
+      badge: 'SPECIAL OFFER',
+      backdropWord: 'ATUL',
+      image: '/products/atul-petrol.png',
       scriptText: 'Built\nfor a moving\nMtwapa',
       bullets: [
-        {
-          icon: 'target',
-          text: 'Ideal for passenger transport'
-        },
-        {
-          icon: 'shield',
-          text: 'Reliable and practical'
-        },
-        {
-          icon: 'briefcase',
-          text: 'Suitable for business use'
-        },
-        {
-          icon: 'info',
-          text: <>Ask <strong className="text-slate-900 font-bold">about available options</strong></>
-        }
+        { icon: 'target', text: 'Ideal for passenger transport' },
+        { icon: 'shield', text: 'Reliable coastal-grade durability' },
+        { icon: 'briefcase', text: 'Low operating & maintenance cost' },
+        { icon: 'info', text: <>Ask <strong className="text-slate-900 font-bold">about Mogo daily financing</strong></> }
       ],
       hotspots: [
-        {
-          id: 'canopy',
-          top: '24%',
-          left: '42%',
-          title: 'Reinforced Weather Canopy',
-          desc: 'Coastal-grade waterproof passenger roof with roll-down weather shields.'
-        },
-        {
-          id: 'cabin',
-          top: '46%',
-          left: '52%',
-          title: 'Comfort 3-Passenger Cabin',
-          desc: 'Ergonomic high-density foam seating with heavy-duty grab handles.'
-        },
-        {
-          id: 'engine',
-          top: '56%',
-          left: '36%',
-          title: 'High-Torque Atul Engine & Fork',
-          desc: 'Fuel-efficient 200cc 4-stroke engine with heavy-duty front suspension.'
-        }
+        { id: 'canopy', top: '24%', left: '42%', title: 'Reinforced Weather Canopy', desc: 'Coastal waterproof passenger roof with roll-down weather shields.' },
+        { id: 'cabin', top: '46%', left: '52%', title: 'Comfort 3-Passenger Cabin', desc: 'Ergonomic high-density foam seating with heavy-duty grab handles.' },
+        { id: 'engine', top: '56%', left: '36%', title: 'High-Torque Atul Engine & Fork', desc: 'Fuel-efficient 200cc 4-stroke engine with heavy-duty front suspension.' }
       ],
       thumbnails: [
-        { id: 0, img: '/images/atul-rik-Photoroom.png', label: '3/4 Front View' },
-        { id: 1, img: '/images/atul-gem-paxx-Photoroom.png', label: 'Side Profile' },
-        { id: 2, img: '/images/cargo-tuktuk-Photoroom.png', label: 'Cargo Carrier' },
-        { id: 3, img: '/images/atul-rik-Photoroom.png', label: 'Front Direct' },
-        { id: 4, img: '/images/atul-gem-paxx-Photoroom.png', label: 'Cabin Interior' }
+        { id: 0, img: '/products/atul-petrol.png', label: 'Atul petrol' },
+        { id: 1, img: '/products/ATUL DIESEL TUKTUK.png', label: 'Atul Diesel' },
+        { id: 2, img: '/products/Atul diesel Cargo-Photoroom.png', label: 'Atul Cargo' }
       ],
       specs: {
-        'Engine Type': 'Single Cylinder 4-Stroke Petrol',
-        'Displacement': '198.6 cc',
+        'Engine': '198.6cc, 4-Stroke Petrol',
+        'Capacity': 'Driver + 3-4 Passengers',
+        'Fuel Economy': '~28 km/L',
         'Transmission': '4 Forward + 1 Reverse',
-        'Seating Capacity': 'Driver + 3 Passengers',
-        'Fuel Tank': '7.5 Litres (Coastal Economy)',
-        'Daily Repayment': 'From KES 750/day via Mogo'
+        'Warranty': '1 Year Dealership Cover'
       },
       features: [
-        'High passenger safety cage built with high-tensile steel',
-        'Excellent coastal fuel economy (~25-28 km/L in city transit)',
-        'Readily available OEM spare parts at Mtwapa showroom',
-        'Low maintenance schedule with authorized dealer service'
+        'Monocoque steel frame chassis engineered for coastal roads',
+        'High passenger safety rating and roll-up weatherproof side curtains',
+        'Readily available spare parts at our Mtwapa showroom counter'
       ]
     },
     {
-      id: 'kenbo-150',
+      id: 'kenbo-100',
       categoryCode: '02',
       categoryLabel: 'MOTORCYCLES',
-      titleLine1: 'KENBO 150cc',
+      titleLine1: 'KENBO 100cc',
       titleLine2: 'Commuter Bike',
-      title: 'KENBO 150cc Commuter Motorcycle',
-      subtitle: 'Engineered for tough coastal terrain, high fuel economy, and dependable daily boda boda transit.',
-      prevPrice: 'KES 165,000',
-      price: 'KES 145,000',
-      badge: 'OFFER',
-      backdropWord: 'RIDE',
-      image: '/images/kenbo-commuter-Photoroom.png',
-      scriptText: 'Power\nfor every mile\nin Mtwapa',
+      title: 'Kenbo 100cc',
+      subtitle: 'Engineered for tough coastal terrain, exceptional fuel economy, and dependable daily commuter mobility.',
+      prevPrice: 'KES 145,000',
+      price: 'KES 132,000',
+      badge: 'TOP ECONOMY',
+      backdropWord: 'KENBO',
+      image: '/products/Kenbo 100cc.png',
+      scriptText: 'Extreme economy\nevery ride\nin Kenya',
       bullets: [
-        {
-          icon: 'target',
-          text: '150cc fuel-efficient 4-stroke engine'
-        },
-        {
-          icon: 'shield',
-          text: 'Over 60 km/L fuel economy'
-        },
-        {
-          icon: 'briefcase',
-          text: 'Dual rear shocks for heavy cargo'
-        },
-        {
-          icon: 'info',
-          text: <>Ask <strong className="text-slate-900 font-bold">about boda boda financing</strong></>
-        }
+        { icon: 'target', text: '100cc ultra-efficient 4-stroke engine' },
+        { icon: 'shield', text: 'Over 65 km/L coastal fuel economy' },
+        { icon: 'briefcase', text: 'Dual rear shocks for comfortable travel' },
+        { icon: 'info', text: <>Ask <strong className="text-slate-900 font-bold">about daily boda financing</strong></> }
       ],
       hotspots: [
-        {
-          id: 'tank',
-          top: '28%',
-          left: '42%',
-          title: '12L Long-Range Fuel Tank',
-          desc: 'Covers over 700km on a single full tank across coastal transit routes.'
-        },
-        {
-          id: 'engine',
-          top: '52%',
-          left: '46%',
-          title: '150cc Air-Cooled Engine',
-          desc: 'High-torque commuter engine designed for continuous tropical operation.'
-        },
-        {
-          id: 'carrier',
-          top: '36%',
-          left: '65%',
-          title: 'Reinforced Luggage Rack',
-          desc: 'Heavy-duty rear steel rack suitable for cargo delivery and dual passenger luggage.'
-        }
+        { id: 'tank', top: '28%', left: '42%', title: 'Long-Range Fuel Tank', desc: 'Covers over 650km on a single full tank across coastal transit routes.' },
+        { id: 'engine', top: '52%', left: '46%', title: '100cc Air-Cooled Engine', desc: 'High-economy commuter engine designed for continuous tropical operation.' }
       ],
       thumbnails: [
-        { id: 0, img: '/images/kenbo-commuter-Photoroom.png', label: '150cc Commuter' },
-        { id: 1, img: '/images/delivery-motorcycle-Photoroom.png', label: 'Commercial 125cc' },
-        { id: 2, img: '/images/kenbo-commuter-Photoroom.png', label: 'Side Angle' },
-        { id: 3, img: '/images/delivery-motorcycle-Photoroom.png', label: 'Cargo Rack' },
-        { id: 4, img: '/images/kenbo-commuter-Photoroom.png', label: 'Engine Bay' }
+        { id: 0, img: '/products/Kenbo 100cc.png', label: 'Kenbo 100cc' },
+        { id: 1, img: '/products/Kenbo 125cc-Photoroom.png', label: 'Kenbo 125cc' },
+        { id: 2, img: '/products/Canda 110 petrol Scooter.png', label: 'Canda 110' }
       ],
       specs: {
-        'Engine': '149cc, 4-Stroke Air-Cooled',
-        'Transmission': '5-Speed Constant Mesh',
-        'Fuel Consumption': '~62 km/L',
-        'Braking': 'Front Disc, Rear Drum',
-        'Daily Repayment': 'From KES 300/day via Mogo'
+        'Engine': '100cc 4-Stroke Air-Cooled',
+        'Mileage': '~65 km/L Ultra Economy',
+        'Transmission': '4-Speed Manual Gearbox',
+        'Braking': 'Front & Rear Heavy-Duty Drum',
+        'Daily Plan': 'From KES 300/day via Mogo'
       },
       features: [
-        'Rugged steel diamond frame for coastal road conditions',
-        'Bright halogen headlight for night passenger runs',
-        'Affordable maintenance and genuine parts in Mtwapa counter',
-        '1-Year dealer engine warranty'
+        'Lightweight nimble handling through busy coastal centers',
+        'Heavy-duty chrome spoked wheels for pothole absorption',
+        'Full spare parts backup at our Mtwapa showroom counter'
       ]
     },
     {
-      id: 'cargo-tuktuk',
+      id: 'kenbo-s20',
       categoryCode: '03',
-      categoryLabel: 'CARGO TUK-TUKS',
-      titleLine1: 'ATUL Cargo',
-      titleLine2: 'Flatbed Carrier',
-      title: 'ATUL Cargo Flatbed Pickup Tuk-Tuk',
-      subtitle: 'Heavy-duty commercial cargo flatbed designed for building materials, hardware, and retail distribution across Mtwapa.',
-      prevPrice: 'KES 440,000',
-      price: 'KES 410,000',
-      badge: 'OFFER',
-      backdropWord: 'RIDE',
-      image: '/images/cargo-tuktuk-Photoroom.png',
-      scriptText: 'Heavy loads\nmaximum profit\nin Mtwapa',
+      categoryLabel: 'ELECTRIC EV',
+      titleLine1: 'KENBO S-20',
+      titleLine2: 'Electric Scooter',
+      title: 'S 20 kenbo Electric Scooters',
+      subtitle: 'Zero fuel expenses with 100% plug & charge smart electric mobility. Smooth, quiet, and eco-friendly.',
+      prevPrice: 'KES 160,000',
+      price: 'KES 145,000',
+      badge: '100% ELECTRIC',
+      backdropWord: 'ELECTRIC',
+      image: '/products/S 20 kenbo Electric Scooters .png',
+      scriptText: 'Zero fuel cost\npure electric\nfreedom',
       bullets: [
-        {
-          icon: 'target',
-          text: '500kg heavy-duty payload capacity'
-        },
-        {
-          icon: 'shield',
-          text: 'Reinforced dual leaf-spring rear suspension'
-        },
-        {
-          icon: 'briefcase',
-          text: 'Drop-down steel cargo tailgate gates'
-        },
-        {
-          icon: 'info',
-          text: <>Ask <strong className="text-slate-900 font-bold">about commercial cargo loans</strong></>
-        }
+        { icon: 'target', text: 'Zero petrol costs — charge at home' },
+        { icon: 'shield', text: 'High capacity rechargeable battery pack' },
+        { icon: 'briefcase', text: 'Front luggage basket & rear cargo box' },
+        { icon: 'info', text: <>Ask <strong className="text-slate-900 font-bold">about EV battery warranty</strong></> }
       ],
       hotspots: [
-        {
-          id: 'bed',
-          top: '36%',
-          left: '58%',
-          title: 'Extended Heavy-Duty Cargo Bed',
-          desc: 'Spacious all-steel corrugated flatbed with high payload tie-down rails.'
-        },
-        {
-          id: 'springs',
-          top: '58%',
-          left: '52%',
-          title: 'Dual Semi-Elliptic Leaf Springs',
-          desc: 'Engineered for sand, cement bags, timber, and rough coastal tracks.'
-        },
-        {
-          id: 'engine-cargo',
-          top: '52%',
-          left: '36%',
-          title: 'High-Torque Cargo Differential',
-          desc: 'Low-ratio commercial gearbox for powerful uphill climbing under load.'
-        }
+        { id: 'motor', top: '55%', left: '50%', title: 'High-Torque Hub Motor', desc: 'Direct drive electric motor with instant acceleration and zero emissions.' },
+        { id: 'basket', top: '30%', left: '60%', title: 'Front Cargo Basket', desc: 'Convenient storage basket for packages and everyday essentials.' }
       ],
       thumbnails: [
-        { id: 0, img: '/images/cargo-tuktuk-Photoroom.png', label: 'Cargo Flatbed 3/4' },
-        { id: 1, img: '/images/atul-rik-Photoroom.png', label: 'Passenger Variant' },
-        { id: 2, img: '/images/atul-gem-paxx-Photoroom.png', label: 'GEM PAXX Body' },
-        { id: 3, img: '/images/cargo-tuktuk-Photoroom.png', label: 'Rear Cargo View' },
-        { id: 4, img: '/images/delivery-motorcycle-Photoroom.png', label: 'Delivery Motorcycle' }
+        { id: 0, img: '/products/S 20 kenbo Electric Scooters .png', label: 'S 20 EV' },
+        { id: 1, img: '/products/Kenbo Electric Scooters u20-Photoroom.png', label: 'U20 Sport' },
+        { id: 2, img: '/products/Kenbo 100cc.png', label: 'Kenbo 100' }
       ],
       specs: {
-        'Engine': '198.6cc, 4-Stroke High Torque',
-        'Payload': '500 KG Commercial Rated',
+        'Power': '100% Pure Electric Motor',
+        'Charging': 'Standard 240V Home Wall Socket',
+        'Brakes': 'Front Disc & Rear Drum',
+        'Top Speed': '45 - 50 km/h Urban Mobility',
+        'Running Cost': 'Less than KES 50 per full charge'
+      },
+      features: [
+        'Huge savings compared to daily petrol expenditures',
+        'Low maintenance schedule with no oil changes or spark plugs',
+        'Authorized dealer service and battery backup in Mtwapa'
+      ]
+    },
+    {
+      id: 'kenbo-125',
+      categoryCode: '04',
+      categoryLabel: 'COMMUTER',
+      titleLine1: 'KENBO 125cc',
+      titleLine2: 'Commercial Bike',
+      title: 'Kenbo 125cc',
+      subtitle: 'High-torque 125cc commuter motorcycle built with reinforced diamond frame and extended pillion carrier deck.',
+      prevPrice: 'KES 158,000',
+      price: 'KES 147,000',
+      badge: 'POPULAR BODA',
+      backdropWord: 'KENBO',
+      image: '/products/Kenbo 125cc-Photoroom.png',
+      scriptText: 'Built tough\nfor coastal\ntransit',
+      bullets: [
+        { icon: 'target', text: '125cc high-compression engine' },
+        { icon: 'shield', text: 'Reinforced dual rear suspension' },
+        { icon: 'briefcase', text: 'Extended luggage & passenger carrier' },
+        { icon: 'info', text: <>Ask <strong className="text-slate-900 font-bold">about boda boda packages</strong></> }
+      ],
+      hotspots: [
+        { id: 'carrier', top: '35%', left: '62%', title: 'Reinforced Boda Carrier', desc: 'Heavy gauge steel carrier rack engineered for heavy payloads.' },
+        { id: 'engine', top: '50%', left: '44%', title: '125cc 4-Stroke Engine', desc: 'Smooth performance with minimal maintenance overhead.' }
+      ],
+      thumbnails: [
+        { id: 0, img: '/products/Kenbo 125cc-Photoroom.png', label: 'Kenbo 125cc' },
+        { id: 1, img: '/products/Kenbo 100cc.png', label: 'Kenbo 100cc' },
+        { id: 2, img: '/products/Canda 110 petrol Scooter.png', label: 'Canda 110' }
+      ],
+      specs: {
+        'Engine': '125cc 4-Stroke Single Cylinder',
+        'Transmission': '5-Speed Constant Mesh',
+        'Fuel Economy': '~58 km/L',
+        'Payload': 'Heavy Duty Commercial Rated',
+        'Warranty': 'Dealership Engine Cover'
+      },
+      features: [
+        'Ergonomic dual seat designed for long working hours',
+        'Rugged knobby tyres suitable for murram and sandy routes',
+        'Immediate collection at our Mtwapa showroom counter'
+      ]
+    },
+    {
+      id: 'kenbo-u20',
+      categoryCode: '05',
+      categoryLabel: 'SPORT EV',
+      titleLine1: 'KENBO U20',
+      titleLine2: 'Sport Power EV',
+      title: 'Kenbo Electric Scooters u20',
+      subtitle: 'Sport Power electric scooter with aerodynamic sports windshield, hydraulic disc brakes, and enclosed top cargo box.',
+      prevPrice: 'KES 170,000',
+      price: 'Cash KES 155,000',
+      badge: 'SPORT POWER',
+      backdropWord: 'SPORT EV',
+      image: '/products/Kenbo Electric Scooters u20-Photoroom.png',
+      scriptText: 'High performance\nsport power\nscooter',
+      bullets: [
+        { icon: 'target', text: 'High output Sport Power electric drive' },
+        { icon: 'shield', text: 'Performance front hydraulic disc brake' },
+        { icon: 'briefcase', text: 'Enclosed lockable rear cargo box' },
+        { icon: 'info', text: <>Ask <strong className="text-slate-900 font-bold">about cash discounts in Mtwapa</strong></> }
+      ],
+      hotspots: [
+        { id: 'disc', top: '70%', left: '60%', title: 'Red Sport Caliper Disc', desc: 'High performance braking with drilled rotor for coastal stopping safety.' },
+        { id: 'windshield', top: '20%', left: '58%', title: 'Aerodynamic Sport Fairing', desc: 'Protects rider from coastal winds and improves cruising efficiency.' }
+      ],
+      thumbnails: [
+        { id: 0, img: '/products/Kenbo Electric Scooters u20-Photoroom.png', label: 'U20 Sport' },
+        { id: 1, img: '/products/S 20 kenbo Electric Scooters .png', label: 'S 20 EV' },
+        { id: 2, img: '/products/Canda 110 petrol Scooter.png', label: 'Canda 110' }
+      ],
+      specs: {
+        'Drive': 'Sport Power Electric Motor',
+        'Brakes': 'Front Hydraulic Disc + Rear Drum',
+        'Storage': 'Lockable Top Trunk Box Included',
+        'Running Cost': 'Ultra low cost per km',
+        'Warranty': 'Authorized Dealership Guarantee'
+      },
+      features: [
+        'Modern stealth black exterior with LED daytime running lights',
+        'Comfortable cushioned seating with pillion footrests',
+        'Clean, silent, and eco-friendly urban commuting'
+      ]
+    },
+    {
+      id: 'atul-cargo',
+      categoryCode: '06',
+      categoryLabel: 'CARGO',
+      titleLine1: 'ATUL Diesel',
+      titleLine2: 'Cargo Flatbed',
+      title: 'Atul diesel Cargo',
+      subtitle: 'Heavy-duty 3-wheeler cargo flatbed designed for building materials, hardware, and logistics distribution across Mtwapa.',
+      prevPrice: 'KES 560,000',
+      price: 'Cash KES 525,000',
+      badge: 'HEAVY CARGO',
+      backdropWord: 'CARGO',
+      image: '/products/Atul diesel Cargo-Photoroom.png',
+      scriptText: 'Maximum load\n500KG rated\nflatbed',
+      bullets: [
+        { icon: 'target', text: 'Heavy commercial payload flatbed' },
+        { icon: 'shield', text: 'All-steel drop-side cargo gates' },
+        { icon: 'briefcase', text: 'High torque diesel pull for heavy haul' },
+        { icon: 'info', text: <>Ask <strong className="text-slate-900 font-bold">about commercial fleet rates</strong></> }
+      ],
+      hotspots: [
+        { id: 'flatbed', top: '38%', left: '60%', title: 'Corrugated Steel Bed', desc: 'High-gauge steel flatbed with tie-down rails for heavy cargo.' },
+        { id: 'cabin', top: '28%', left: '40%', title: 'Enclosed Driver Cabin', desc: 'Weather protection for all-day commercial logistics routes.' }
+      ],
+      thumbnails: [
+        { id: 0, img: '/products/Atul diesel Cargo-Photoroom.png', label: 'Atul Cargo' },
+        { id: 1, img: '/products/Apsonic 200cc 3 wheeler-Photoroom.png', label: 'Apsonic Trike' },
+        { id: 2, img: '/products/ATUL DIESEL TUKTUK.png', label: 'Atul Diesel' }
+      ],
+      specs: {
+        'Engine': 'High-Torque Single Cylinder Diesel',
+        'Payload': 'Heavy Commercial Rated',
         'Cargo Bed': 'All-Steel Drop-Side Tray',
         'Transmission': '4 Forward + 1 Reverse Heavy Ratio',
-        'Daily Repayment': 'From KES 800/day via Mogo'
+        'Warranty': '1 Year Dealership Warranty'
       },
       features: [
-        'Dedicated flatbed designed specifically for commercial retail and logistics',
-        'Reinforced ladder-type steel frame chassis for extreme payloads',
-        'Low fuel operating cost delivering fast return on investment',
-        'Immediate availability and full spare parts backup in Mtwapa'
+        'Extreme cargo profitability for coastal distribution and trade',
+        'Reinforced leaf spring suspension for heavy loads',
+        'Immediate delivery from our Mtwapa showroom depot'
       ]
     },
     {
-      id: 'atul-gem',
-      categoryCode: '04',
-      categoryLabel: 'OFFERS',
-      titleLine1: 'ATUL GEM',
-      titleLine2: 'Diesel Tuk-Tuk',
-      title: 'ATUL GEM Diesel Tuk-Tuk',
-      subtitle: 'Deals Moto Moto! Heavy-duty Atul GEM Diesel Tuk-Tuk. Was KES 525,500, now KES 485,000 PLUS Free Logbook Transfer included in Mtwapa.',
-      prevPrice: 'KES 525,500',
-      price: 'KES 485,000',
-      badge: 'PLUS LOGBOOK',
-      backdropWord: 'RIDE',
-      image: '/images/atul-gem-paxx-Photoroom.png',
-      scriptText: 'Maximum profit\nevery trip\nin Kilifi',
+      id: 'apsonic-200',
+      categoryCode: '07',
+      categoryLabel: 'APSONIC',
+      titleLine1: 'APSONIC 200cc',
+      titleLine2: 'Cargo 3-Wheeler',
+      title: 'Apsonic 200cc 3 wheeler',
+      subtitle: '200cc heavy-duty cargo trike with driver weather canopy, drop-side gates, and high pulling power for commercial delivery.',
+      prevPrice: 'KES 385,000',
+      price: 'Cash 350,000',
+      badge: 'CARGO TRIKE',
+      backdropWord: 'APSONIC',
+      image: '/products/Apsonic 200cc 3 wheeler-Photoroom.png',
+      scriptText: 'Heavy hauling\ncommercial\npower',
       bullets: [
-        {
-          icon: 'target',
-          text: 'Plus FREE Logbook Transfer included'
-        },
-        {
-          icon: 'shield',
-          text: 'Heavy-duty coastal suspension package'
-        },
-        {
-          icon: 'briefcase',
-          text: 'Includes 3 free dealer service vouchers'
-        },
-        {
-          icon: 'info',
-          text: <>Ask <strong className="text-slate-900 font-bold">about Mogo daily repayment</strong></>
-        }
+        { icon: 'target', text: '200cc high output pulling power' },
+        { icon: 'shield', text: 'Protective overhead weather canopy' },
+        { icon: 'briefcase', text: 'Reinforced dual front spring forks' },
+        { icon: 'info', text: <>Ask <strong className="text-slate-900 font-bold">about cash purchase deals</strong></> }
       ],
       hotspots: [
-        {
-          id: 'monocoque',
-          top: '24%',
-          left: '45%',
-          title: 'High-Strength Steel Body',
-          desc: 'All-metal monocoque structure offering superior durability on unpaved roads.'
-        },
-        {
-          id: 'cabin-paxx',
-          top: '46%',
-          left: '55%',
-          title: 'Extended Passenger Cabin',
-          desc: 'Generous headroom and legroom with wide passenger boarding doors.'
-        },
-        {
-          id: 'fork',
-          top: '58%',
-          left: '38%',
-          title: 'Heavy-Duty Trailing Arm Suspension',
-          desc: 'Smooth ride over speed bumps and sandy coastal routes.'
-        }
+        { id: 'canopy', top: '15%', left: '35%', title: 'All-Weather Roof', desc: 'Protects the driver against sun and coastal rain.' },
+        { id: 'box', top: '40%', left: '60%', title: 'Deep Commercial Cargo Box', desc: 'Generous volume for farm produce, hardware, and goods.' }
       ],
       thumbnails: [
-        { id: 0, img: '/images/atul-gem-paxx-Photoroom.png', label: 'GEM PAXX Front' },
-        { id: 1, img: '/images/atul-rik-Photoroom.png', label: 'Rik Tuk-Tuk' },
-        { id: 2, img: '/images/cargo-tuktuk-Photoroom.png', label: 'Cargo Pickup' },
-        { id: 3, img: '/images/atul-gem-paxx-Photoroom.png', label: 'Side Profile' },
-        { id: 4, img: '/images/atul-rik-Photoroom.png', label: 'Passenger Seating' }
+        { id: 0, img: '/products/Apsonic 200cc 3 wheeler-Photoroom.png', label: 'Apsonic Trike' },
+        { id: 1, img: '/products/Atul diesel Cargo-Photoroom.png', label: 'Atul Cargo' },
+        { id: 2, img: '/products/atul-petrol.png', label: 'Atul Petrol' }
       ],
       specs: {
-        'Engine': '198.6cc, 4-Stroke High Torque',
-        'Payload': 'Heavy Commercial Rated',
-        'Passenger Capacity': 'Driver + 3-4 Passengers',
-        'Fuel Tank': '7.5 Litres',
-        'Daily Repayment': 'From KES 850/day via Mogo'
+        'Engine': '200cc High Power Engine',
+        'Cargo Box': 'Deep Steel Cargo Body',
+        'Roof': 'Full Driver Weather Canopy',
+        'Brakes': 'Heavy Hydraulic Commercial System',
+        'Warranty': 'Authorized Dealership Cover'
       },
       features: [
-        'Highest passenger capacity rating in the Atul commercial line',
-        'Heavy-duty differential built for long continuous operational hours',
-        'Low fuel operating cost with fast return on vehicle investment',
-        'Official registration assistance in Mtwapa and Kilifi County'
+        'Powerful low gear ratio for steep gradients and sand',
+        'Dual shock front forks with auxiliary springs',
+        'Genuine parts and servicing in stock at Mtwapa'
+      ]
+    },
+    {
+      id: 'atul-diesel-tuktuk',
+      categoryCode: '08',
+      categoryLabel: 'DIESEL',
+      titleLine1: 'ATUL GEM',
+      titleLine2: 'Diesel Tuk-Tuk',
+      title: 'ATUL DIESEL TUKTUK',
+      subtitle: 'Flagship Atul GEM Diesel passenger tuk-tuk. Outstanding torque, spacious passenger room, and lowest running cost per passenger trip.',
+      prevPrice: 'KES 525,500',
+      price: 'KES 485,000',
+      badge: 'DIESEL PASSENGER',
+      backdropWord: 'DIESEL',
+      image: '/products/ATUL DIESEL TUKTUK.png',
+      scriptText: 'High torque\nmaximum passenger\nrevenue',
+      bullets: [
+        { icon: 'target', text: 'Class-leading diesel fuel economy' },
+        { icon: 'shield', text: 'Spacious seating for 3-4 passengers' },
+        { icon: 'briefcase', text: 'Monocoque high-tensile steel frame' },
+        { icon: 'info', text: <>Ask <strong className="text-slate-900 font-bold">about daily repayment plans</strong></> }
+      ],
+      hotspots: [
+        { id: 'body', top: '35%', left: '48%', title: 'All-Metal Monocoque Body', desc: 'Enhanced safety and longevity on Kenyan coastal roads.' },
+        { id: 'engine', top: '55%', left: '42%', title: 'High-Torque Diesel Engine', desc: 'Unmatched pull under full passenger load with low fuel costs.' }
+      ],
+      thumbnails: [
+        { id: 0, img: '/products/ATUL DIESEL TUKTUK.png', label: 'Atul Diesel' },
+        { id: 1, img: '/products/atul-petrol.png', label: 'Atul Petrol' },
+        { id: 2, img: '/products/Atul diesel Cargo-Photoroom.png', label: 'Atul Cargo' }
+      ],
+      specs: {
+        'Engine': 'Single Cylinder 4-Stroke Diesel',
+        'Passenger Capacity': 'Driver + 3-4 Passengers',
+        'Fuel': 'High Torque Diesel',
+        'Transmission': '4 Forward + 1 Reverse Manual',
+        'Warranty': '1 Year / 20,000 KM Cover'
+      },
+      features: [
+        'High return on investment for passenger transit operators',
+        'Roll-down weather curtains and comfortable seats',
+        'Authorized Mtwapa dealer counter registration assistance'
+      ]
+    },
+    {
+      id: 'canda-scooter',
+      categoryCode: '09',
+      categoryLabel: 'SCOOTERS',
+      titleLine1: 'CANDA 110',
+      titleLine2: 'Petrol Scooter',
+      title: 'Canda 110 petrol Scooter',
+      subtitle: 'Quiet 110cc 4-stroke commuter scooter with semi-automatic transmission and front hydraulic disc brake. Smooth & effortless.',
+      prevPrice: 'KES 148,000',
+      price: 'Cash KES 135,000',
+      badge: 'PETROL SCOOTER',
+      backdropWord: 'CANDA',
+      image: '/products/Canda 110 petrol Scooter.png',
+      scriptText: 'Smooth & easy\neveryday coastal\ncommute',
+      bullets: [
+        { icon: 'target', text: '110cc smooth and quiet 4-stroke engine' },
+        { icon: 'shield', text: 'Semi-automatic transmission (no clutch lever)' },
+        { icon: 'briefcase', text: 'Front hydraulic disc brake for safety' },
+        { icon: 'info', text: <>Ask <strong className="text-slate-900 font-bold">about Mtwapa counter pickup</strong></> }
+      ],
+      hotspots: [
+        { id: 'disc', top: '70%', left: '45%', title: 'Front Disc Brake', desc: 'Superior stopping power with ventilated disc.' },
+        { id: 'seat', top: '35%', left: '55%', title: 'Comfort Dual Saddle', desc: 'Soft long saddle for effortless personal travel.' }
+      ],
+      thumbnails: [
+        { id: 0, img: '/products/Canda 110 petrol Scooter.png', label: 'Canda 110' },
+        { id: 1, img: '/products/Kenbo 100cc.png', label: 'Kenbo 100cc' },
+        { id: 2, img: '/products/Kenbo Electric Scooters u20-Photoroom.png', label: 'U20 Sport' }
+      ],
+      specs: {
+        'Engine': '110cc 4-Stroke Air-Cooled',
+        'Transmission': '4-Speed Semi-Automatic (No Hand Clutch)',
+        'Brakes': 'Front Hydraulic Disc, Rear Drum',
+        'Fuel Economy': '~60 km/L',
+        'Warranty': 'Official Dealership Warranty'
+      },
+      features: [
+        'Effortless twist-and-go ride for beginners and daily riders',
+        'Bright front halogen headlamp with clear turn indicators',
+        'Compact and light for nimble traffic navigation'
       ]
     }
   ];
@@ -679,15 +753,15 @@ export const ShowcaseHero: React.FC<ShowcaseHeroProps> = ({ onOpenEnquiryModal }
                     ✕ Back to Vehicle
                   </button>
                 </div>
-                <div className="grid grid-cols-5 gap-2">
-                  {currentProduct.thumbnails.map((t, i) => (
+                <div className="grid grid-cols-3 gap-2.5">
+                  {products.map((p, i) => (
                     <button
-                      key={t.id}
-                      onClick={() => { setActiveThumbIndex(i); setActiveTab('OVERVIEW'); }}
+                      key={p.id}
+                      onClick={() => { handleSelectProduct(i); setActiveTab('OVERVIEW'); }}
                       className="bg-white p-1 rounded-xl border border-slate-200 hover:border-[#0D6EFD] transition-all hover:scale-105 cursor-pointer"
                     >
-                      <img src={t.img} alt={t.label} className="w-full h-16 object-contain" />
-                      <span className="text-[9px] font-bold text-slate-600 block text-center truncate mt-1">{t.label}</span>
+                      <img src={p.image} alt={p.title} className="w-full h-16 object-contain" />
+                      <span className="text-[9px] font-bold text-slate-600 block text-center truncate mt-1">{p.title}</span>
                     </button>
                   ))}
                 </div>
@@ -696,35 +770,36 @@ export const ShowcaseHero: React.FC<ShowcaseHeroProps> = ({ onOpenEnquiryModal }
 
           </div>
 
-          {/* Bottom Controls Row: 5 Thumbnails + Sub-Navigation Tabs */}
+          {/* Bottom Controls Row: Showroom Models Strip + Sub-Navigation Tabs */}
           <div className="space-y-1.5 pt-1 relative z-20">
             
-            {/* 5 Thumbnails Slider */}
+            {/* Showroom Models Strip */}
             <div className="flex items-center justify-center sm:justify-start gap-1.5 overflow-x-auto py-0.5">
               <button 
-                onClick={() => setActiveThumbIndex((prev) => (prev - 1 + currentProduct.thumbnails.length) % currentProduct.thumbnails.length)}
+                onClick={handlePrevProduct}
                 className="w-6 h-6 rounded-full border border-slate-300 bg-white hover:bg-slate-100 flex items-center justify-center text-xs font-bold text-slate-700 shrink-0 cursor-pointer shadow-2xs"
                 aria-label="Previous view"
               >
                 &larr;
               </button>
 
-              {currentProduct.thumbnails.map((t, idx) => (
+              {products.map((p, idx) => (
                 <button
-                  key={t.id}
-                  onClick={() => setActiveThumbIndex(idx)}
+                  key={p.id}
+                  onClick={() => handleSelectProduct(idx)}
                   className={`w-11 h-9 sm:w-12 sm:h-10 rounded-md overflow-hidden bg-white p-0.5 transition-all shrink-0 cursor-pointer ${
-                    activeThumbIndex === idx 
+                    activeCategoryIndex === idx 
                       ? 'border-2 border-[#0D6EFD] shadow-xs scale-105 ring-1 ring-blue-100' 
                       : 'border border-slate-200 opacity-60 hover:opacity-100'
                   }`}
+                  title={p.title}
                 >
-                  <img src={t.img} alt={t.label} className="w-full h-full object-contain" />
+                  <img src={p.image} alt={p.title} className="w-full h-full object-contain" />
                 </button>
               ))}
 
               <button 
-                onClick={() => setActiveThumbIndex((prev) => (prev + 1) % currentProduct.thumbnails.length)}
+                onClick={handleNextProduct}
                 className="w-6 h-6 rounded-full border border-slate-300 bg-white hover:bg-slate-100 flex items-center justify-center text-xs font-bold text-slate-700 shrink-0 cursor-pointer shadow-2xs"
                 aria-label="Next view"
               >
@@ -795,134 +870,53 @@ export const ShowcaseHero: React.FC<ShowcaseHeroProps> = ({ onOpenEnquiryModal }
               </a>
             </div>
 
-            {/* 4 Stacked Interactive Vehicle Items (ALL REAL VEHICLES!) */}
-            <div className="divide-y divide-slate-800/70">
-              
-              {/* 1. ATUL GEM PAXX */}
-              <button
-                onClick={() => handleSelectProduct(3)}
-                className={`w-full text-left py-2.5 sm:py-3 flex items-center justify-between gap-3 group px-2 rounded-xl transition-all cursor-pointer ${
-                  activeCategoryIndex === 3 ? 'bg-white/10 ring-1 ring-blue-500' : 'hover:bg-white/5'
-                }`}
-              >
-                <div className="w-12 h-10 sm:w-14 sm:h-11 bg-white/5 rounded-lg p-0.5 flex items-center justify-center shrink-0">
-                  <img 
-                    src="/images/atul-gem-paxx-Photoroom.png" 
-                    alt="Atul GEM PAXX" 
-                    className="w-full h-full object-contain group-hover:scale-105 transition-transform"
-                  />
-                </div>
-                <div className="flex-1 min-w-0">
-                  <span className="text-[9px] font-bold text-slate-400 uppercase tracking-wider block">
-                    TUK-TUK
-                  </span>
-                  <h4 className="font-bold text-white text-xs sm:text-sm truncate group-hover:text-[#FFC107] transition-colors">
-                    ATUL GEM Diesel
-                  </h4>
-                  <div className="flex items-center gap-1.5 mt-0.5">
-                    <span className="text-[11px] text-[#FFC107] font-bold">
-                      KES 485,000
-                    </span>
-                    <span className="text-[9px] text-slate-400 line-through">
-                      525,500
-                    </span>
-                  </div>
-                </div>
-                <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full border border-slate-700 text-slate-400 group-hover:border-[#FFC107] group-hover:text-[#FFC107] flex items-center justify-center text-xs shrink-0 transition-colors">
-                  &rarr;
-                </div>
-              </button>
-
-              {/* 2. KENBO 150cc */}
-              <button
-                onClick={() => handleSelectProduct(1)}
-                className={`w-full text-left py-2.5 sm:py-3 flex items-center justify-between gap-3 group px-2 rounded-xl transition-all cursor-pointer ${
-                  activeCategoryIndex === 1 ? 'bg-white/10 ring-1 ring-blue-500' : 'hover:bg-white/5'
-                }`}
-              >
-                <div className="w-12 h-10 sm:w-14 sm:h-11 bg-white/5 rounded-lg p-0.5 flex items-center justify-center shrink-0">
-                  <img 
-                    src="/images/kenbo-commuter-Photoroom.png" 
-                    alt="KENBO 150cc Motorcycle" 
-                    className="w-full h-full object-contain group-hover:scale-105 transition-transform"
-                  />
-                </div>
-                <div className="flex-1 min-w-0">
-                  <span className="text-[9px] font-bold text-slate-400 uppercase tracking-wider block">
-                    MOTORCYCLE
-                  </span>
-                  <h4 className="font-bold text-white text-xs sm:text-sm truncate group-hover:text-[#FFC107] transition-colors">
-                    KENBO 150cc
-                  </h4>
-                  <span className="text-[11px] text-slate-400 font-medium block mt-0.5">
-                    Request a Quote
-                  </span>
-                </div>
-                <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full border border-slate-700 text-slate-400 group-hover:border-[#FFC107] group-hover:text-[#FFC107] flex items-center justify-center text-xs shrink-0 transition-colors">
-                  &rarr;
-                </div>
-              </button>
-
-              {/* 3. ATUL Rik Tuk-Tuk */}
-              <button
-                onClick={() => handleSelectProduct(0)}
-                className={`w-full text-left py-2.5 sm:py-3 flex items-center justify-between gap-3 group px-2 rounded-xl transition-all cursor-pointer ${
-                  activeCategoryIndex === 0 ? 'bg-white/10 ring-1 ring-blue-500' : 'hover:bg-white/5'
-                }`}
-              >
-                <div className="w-12 h-10 sm:w-14 sm:h-11 bg-white/5 rounded-lg p-0.5 flex items-center justify-center shrink-0">
-                  <img 
-                    src="/images/atul-rik-Photoroom.png" 
-                    alt="ATUL Rik Petrol Tuk-Tuk" 
-                    className="w-full h-full object-contain group-hover:scale-105 transition-transform"
-                  />
-                </div>
-                <div className="flex-1 min-w-0">
-                  <span className="text-[9px] font-bold text-slate-400 uppercase tracking-wider block">
-                    TUK-TUK
-                  </span>
-                  <h4 className="font-bold text-white text-xs sm:text-sm truncate group-hover:text-[#FFC107] transition-colors">
-                    ATUL Rik Tuk-Tuk
-                  </h4>
-                  <span className="text-[11px] text-slate-300 font-semibold block mt-0.5">
-                    KES 390,000
-                  </span>
-                </div>
-                <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full border border-slate-700 text-slate-400 group-hover:border-[#FFC107] group-hover:text-[#FFC107] flex items-center justify-center text-xs shrink-0 transition-colors">
-                  &rarr;
-                </div>
-              </button>
-
-              {/* 4. ATUL Cargo Flatbed (Clean replacement for parts!) */}
-              <button
-                onClick={() => handleSelectProduct(2)}
-                className={`w-full text-left py-2.5 sm:py-3 flex items-center justify-between gap-3 group px-2 rounded-xl transition-all cursor-pointer ${
-                  activeCategoryIndex === 2 ? 'bg-white/10 ring-1 ring-blue-500' : 'hover:bg-white/5'
-                }`}
-              >
-                <div className="w-12 h-10 sm:w-14 sm:h-11 bg-white/5 rounded-lg p-0.5 flex items-center justify-center shrink-0">
-                  <img 
-                    src="/images/cargo-tuktuk-Photoroom.png" 
-                    alt="ATUL Cargo Flatbed" 
-                    className="w-full h-full object-contain group-hover:scale-105 transition-transform"
-                  />
-                </div>
-                <div className="flex-1 min-w-0">
-                  <span className="text-[9px] font-bold text-slate-400 uppercase tracking-wider block">
-                    CARGO TUK-TUK
-                  </span>
-                  <h4 className="font-bold text-white text-xs sm:text-sm truncate group-hover:text-[#FFC107] transition-colors">
-                    ATUL Cargo Flatbed
-                  </h4>
-                  <span className="text-[11px] text-slate-300 font-semibold block mt-0.5">
-                    KES 410,000
-                  </span>
-                </div>
-                <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full border border-slate-700 text-slate-400 group-hover:border-[#FFC107] group-hover:text-[#FFC107] flex items-center justify-center text-xs shrink-0 transition-colors">
-                  &rarr;
-                </div>
-              </button>
-
+            {/* Real Showroom Vehicle Items in Right Column (All 9 Real Models) */}
+            <div className="max-h-[380px] sm:max-h-[440px] overflow-y-auto space-y-1.5 pr-1 divide-y divide-slate-800/70">
+              {products.map((p, idx) => {
+                const isSelected = activeCategoryIndex === idx;
+                return (
+                  <button
+                    key={p.id}
+                    onClick={() => handleSelectProduct(idx)}
+                    className={`w-full text-left py-2.5 sm:py-3 flex items-center justify-between gap-3 group px-2 rounded-xl transition-all cursor-pointer ${
+                      isSelected ? 'bg-white/10 ring-1 ring-[#0D6EFD]' : 'hover:bg-white/5'
+                    }`}
+                  >
+                    <div className="w-12 h-10 sm:w-14 sm:h-11 bg-white/5 rounded-lg p-1 flex items-center justify-center shrink-0">
+                      <img 
+                        src={p.image} 
+                        alt={p.title} 
+                        className="w-full h-full object-contain group-hover:scale-105 transition-transform"
+                      />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <span className="text-[9px] font-bold text-slate-400 uppercase tracking-wider block">
+                        {p.categoryLabel}
+                      </span>
+                      <h4 className="font-bold text-white text-xs sm:text-sm truncate group-hover:text-[#FFC107] transition-colors">
+                        {p.title}
+                      </h4>
+                      <div className="flex items-center gap-1.5 mt-0.5">
+                        <span className="text-[11px] text-[#FFC107] font-bold">
+                          {p.price}
+                        </span>
+                        {p.prevPrice && (
+                          <span className="text-[9px] text-slate-400 line-through">
+                            {p.prevPrice}
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                    <div className={`w-6 h-6 sm:w-7 sm:h-7 rounded-full border flex items-center justify-center text-xs shrink-0 transition-colors ${
+                      isSelected 
+                        ? 'border-[#FFC107] text-[#FFC107] bg-[#FFC107]/10' 
+                        : 'border-slate-700 text-slate-400 group-hover:border-[#FFC107] group-hover:text-[#FFC107]'
+                    }`}>
+                      &rarr;
+                    </div>
+                  </button>
+                );
+              })}
             </div>
           </div>
 
