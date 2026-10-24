@@ -142,7 +142,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEnquiryModal }) => {
           </div>
 
           {/* Right Black Header Section (Starts at top beside navbar, exactly matching right panel width) */}
-          <div className="hidden lg:flex w-[320px] xl:w-[350px] 2xl:w-[380px] bg-[#0B111A] text-white items-center justify-between px-6 shrink-0 border-b border-slate-800/80">
+          <div className="hidden lg:flex w-[290px] xl:w-[320px] 2xl:w-[340px] bg-[#0B111A] text-white items-center justify-between px-6 shrink-0 border-b border-slate-800/80">
             <span className="text-xs font-bold tracking-widest text-slate-200 uppercase font-display">
               OUR VEHICLES
             </span>
