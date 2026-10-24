@@ -12,7 +12,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEnquiryModal }) => {
 
   const navLinks = [
     { name: 'Home', path: '/' },
-    { name: 'Vehicles', path: '#vehicles' },
     { name: 'Spare Parts', path: '/spare-parts' },
     { name: 'Contact', path: '#contact' }
   ];
