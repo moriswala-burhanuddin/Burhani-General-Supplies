@@ -787,12 +787,12 @@ export const ShowcaseHero: React.FC<ShowcaseHeroProps> = ({ onOpenEnquiryModal }
               <span className="text-xs font-bold tracking-widest text-slate-200 uppercase font-display">
                 OUR VEHICLES
               </span>
-              <Link
-                to="/vehicles"
+              <a
+                href="#vehicles"
                 className="text-xs font-bold text-slate-400 hover:text-white transition-colors"
               >
                 VIEW ALL &rarr;
-              </Link>
+              </a>
             </div>
 
             {/* 4 Stacked Interactive Vehicle Items (ALL REAL VEHICLES!) */}
@@ -940,142 +940,8 @@ export const ShowcaseHero: React.FC<ShowcaseHeroProps> = ({ onOpenEnquiryModal }
           </div>
 
         </div>
-
       </div>
-
-      {/* ── 4. Branding & Why Choose Us Section (Greatly Enhanced for Mobile!) ── */}
-      <div className="border-t border-slate-200 bg-white">
-        <div className="w-full flex flex-col lg:flex-row items-stretch">
-          
-          {/* Left: Storefront Photo with Signboard */}
-          <div className="lg:w-[36%] relative min-h-[220px] sm:min-h-[260px] lg:min-h-[280px] overflow-hidden border-b lg:border-b-0 lg:border-r border-slate-200 group">
-            <img
-              src="/images/dealership-building.jpg"
-              alt="Burhani General Supplies Dealership Storefront Mtwapa"
-              className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-700"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent lg:hidden" />
-            
-            <div className="absolute top-3 left-3 bg-[#082B5C] text-white px-3 py-1 rounded-full text-[9px] font-extrabold uppercase tracking-wider shadow-md">
-              Official Showroom Mtwapa
-            </div>
-
-            <div className="absolute bottom-3 left-3 text-white lg:hidden">
-              <span className="text-xs font-bold block">Mombasa-Malindi Highway</span>
-              <span className="text-[10px] text-slate-200">Open Mon - Sat 8:00 AM - 6:00 PM</span>
-            </div>
-          </div>
-
-          {/* Right: Why Choose Us & 4 Pillars (Enhanced 2x2 Grid on Mobile with Cards & Accents!) */}
-          <div className="lg:w-[64%] p-5 sm:p-6 lg:p-8 flex flex-col justify-center space-y-4">
-            
-            <div>
-              <span className="text-xs font-extrabold text-[#0D6EFD] uppercase tracking-wider block">
-                WHY CHOOSE US
-              </span>
-              <h2 className="font-display text-2xl sm:text-3xl lg:text-3xl font-extrabold text-slate-950 tracking-tight leading-tight mt-0.5">
-                More Than Vehicles.<br />A Partner for Your Journey.
-              </h2>
-            </div>
-
-            {/* 4 Clean Feature Cards: 2x2 Grid on Mobile, 4 Cols on Desktop matching exact reference! */}
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 pt-1">
-              
-              {/* 1. Wide Range of Vehicles */}
-              <div className="bg-white border border-slate-200/90 rounded-2xl p-3.5 sm:p-4 space-y-2.5 transition-all hover:border-[#0D6EFD] shadow-2xs group">
-                <div className="w-9 h-9 rounded-xl bg-slate-50 border border-slate-100 text-slate-900 group-hover:text-[#0D6EFD] flex items-center justify-center transition-colors">
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.8">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
-                  </svg>
-                </div>
-                <div>
-                  <h4 className="font-bold text-slate-950 text-xs sm:text-sm leading-snug">
-                    Wide Range<br />of Vehicles
-                  </h4>
-                  <p className="text-[11px] text-slate-500 font-medium leading-relaxed mt-1">
-                    Motorcycles, tuk-tuks and quality spare parts.
-                  </p>
-                </div>
-              </div>
-
-              {/* 2. Enquiry Assistance */}
-              <div className="bg-white border border-slate-200/90 rounded-2xl p-3.5 sm:p-4 space-y-2.5 transition-all hover:border-[#0D6EFD] shadow-2xs group">
-                <div className="w-9 h-9 rounded-xl bg-slate-50 border border-slate-100 text-slate-900 group-hover:text-[#0D6EFD] flex items-center justify-center transition-colors">
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.8">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M3 18v-6a9 9 0 0118 0v6M21 19a2 2 0 01-2 2h-1a2 2 0 01-2-2v-3a2 2 0 012-2h3zM3 19a2 2 0 002 2h1a2 2 0 002-2v-3a2 2 0 00-2-2H3z" />
-                  </svg>
-                </div>
-                <div>
-                  <h4 className="font-bold text-slate-950 text-xs sm:text-sm leading-snug">
-                    Enquiry<br />Assistance
-                  </h4>
-                  <p className="text-[11px] text-slate-500 font-medium leading-relaxed mt-1">
-                    Get details directly from our team.
-                  </p>
-                </div>
-              </div>
-
-              {/* 3. Financing Information */}
-              <div className="bg-white border border-slate-200/90 rounded-2xl p-3.5 sm:p-4 space-y-2.5 transition-all hover:border-[#0D6EFD] shadow-2xs group">
-                <div className="w-9 h-9 rounded-xl bg-slate-50 border border-slate-100 text-slate-900 group-hover:text-[#0D6EFD] flex items-center justify-center transition-colors">
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.8">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                  </svg>
-                </div>
-                <div>
-                  <h4 className="font-bold text-slate-950 text-xs sm:text-sm leading-snug">
-                    Financing<br />Information
-                  </h4>
-                  <p className="text-[11px] text-slate-500 font-medium leading-relaxed mt-1">
-                    Ask about available options.
-                  </p>
-                </div>
-              </div>
-
-              {/* 4. Quality Products */}
-              <div className="bg-white border border-slate-200/90 rounded-2xl p-3.5 sm:p-4 space-y-2.5 transition-all hover:border-[#0D6EFD] shadow-2xs group">
-                <div className="w-9 h-9 rounded-xl bg-slate-50 border border-slate-100 text-slate-900 group-hover:text-[#0D6EFD] flex items-center justify-center transition-colors">
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.8">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
-                </div>
-                <div>
-                  <h4 className="font-bold text-slate-950 text-xs sm:text-sm leading-snug">
-                    Quality<br />Products
-                  </h4>
-                  <p className="text-[11px] text-slate-500 font-medium leading-relaxed mt-1">
-                    Reliable rides and accessories.
-                  </p>
-                </div>
-              </div>
-
-            </div>
-
-            {/* Mobile-Only Showroom & WhatsApp Ribbon */}
-            <div className="pt-2 flex flex-col sm:flex-row gap-2 sm:hidden">
-              <a
-                href={`https://wa.me/${DEALERSHIP_WHATSAPP}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full py-2.5 px-4 bg-[#FFC107] text-slate-950 font-bold rounded-xl text-xs text-center shadow-xs flex items-center justify-center gap-1.5"
-              >
-                <span>Chat on WhatsApp</span>
-                <span>&rarr;</span>
-              </a>
-              <Link
-                to="/about"
-                className="w-full py-2.5 px-4 bg-slate-100 text-slate-800 font-bold rounded-xl text-xs text-center flex items-center justify-center gap-1.5"
-              >
-                <span>Visit Showroom in Mtwapa</span>
-              </Link>
-            </div>
-
-          </div>
-
-        </div>
-      </div>
-
     </div>
   );
 };
+

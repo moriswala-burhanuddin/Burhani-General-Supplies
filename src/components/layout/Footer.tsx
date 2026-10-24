@@ -70,29 +70,29 @@ export const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-2 text-slate-600 font-medium">
               <li>
-                <Link to="/vehicles?category=tuk-tuk" className="hover:text-slate-950 transition-colors">
+                <a href="#vehicles" className="hover:text-slate-950 transition-colors">
                   Atul Rik Petrol Tuk-Tuk
-                </Link>
+                </a>
               </li>
               <li>
-                <Link to="/vehicles?category=tuk-tuk" className="hover:text-slate-950 transition-colors">
-                  Atul GEM PAXX Commercial
-                </Link>
+                <a href="#vehicles" className="hover:text-slate-950 transition-colors">
+                  Atul GEM Diesel Tuk-Tuk
+                </a>
               </li>
               <li>
-                <Link to="/vehicles?category=motorcycle" className="hover:text-slate-950 transition-colors">
+                <a href="#vehicles" className="hover:text-slate-950 transition-colors">
                   KENBO 150cc Commuter Bike
-                </Link>
+                </a>
               </li>
               <li>
-                <Link to="/vehicles?category=motorcycle" className="hover:text-slate-950 transition-colors">
+                <a href="#vehicles" className="hover:text-slate-950 transition-colors">
                   Commercial Delivery Motorcycles
-                </Link>
+                </a>
               </li>
               <li>
-                <Link to="/vehicles" className="text-[#0D6EFD] font-bold hover:underline">
-                  Browse All 4 Showroom Models &rarr;
-                </Link>
+                <a href="#vehicles" className="text-[#0D6EFD] font-bold hover:underline">
+                  Browse All Showroom Models &rarr;
+                </a>
               </li>
             </ul>
           </div>

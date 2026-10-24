@@ -56,12 +56,12 @@ export const SpecialDealsCard: React.FC = () => {
             <span>&rarr;</span>
           </a>
 
-          <Link
-            to="/vehicles?category=all&offers=true"
-            className="px-4 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-800 rounded-full text-xs font-bold transition-colors"
+          <a
+            href="#vehicles"
+            className="px-4 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-800 rounded-full text-xs font-bold transition-colors cursor-pointer"
           >
-            View All Offers
-          </Link>
+            View All Fleet &rarr;
+          </a>
         </div>
       </div>
 

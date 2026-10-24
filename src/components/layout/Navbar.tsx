@@ -12,17 +12,30 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEnquiryModal }) => {
 
   const navLinks = [
     { name: 'Home', path: '/' },
-    { name: 'Motorcycles', path: '/vehicles?category=motorcycle' },
-    { name: 'Tuk-Tuks', path: '/vehicles?category=tuk-tuk' },
+    { name: 'Vehicles', path: '#vehicles' },
     { name: 'Spare Parts', path: '/spare-parts' },
-    { name: 'Financing', path: '/financing' },
-    { name: 'About', path: '/about' },
-    { name: 'Contact', path: '/contact' }
+    { name: 'Contact', path: '#contact' }
   ];
+
+  const handleNavClick = (e: React.MouseEvent, path: string) => {
+    if (path.startsWith('#')) {
+      if (isHomePage) {
+        e.preventDefault();
+        const targetId = path.replace('#', '');
+        const el = document.getElementById(targetId);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth' });
+        }
+      } else {
+        window.location.href = `/${path}`;
+      }
+      setMobileMenuOpen(false);
+    }
+  };
 
   const isActive = (path: string) => {
     if (path === '/' && location.pathname === '/') return true;
-    if (path !== '/' && (location.pathname === path || (path.includes('?') && location.search.includes(path.split('?')[1])))) return true;
+    if (path === '/spare-parts' && location.pathname === '/spare-parts') return true;
     return false;
   };
 
@@ -59,11 +72,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEnquiryModal }) => {
             </Link>
 
             {/* Desktop Navigation Links (with whitespace-nowrap so words NEVER wrap!) */}
-            <nav className="hidden lg:flex items-center gap-3.5 xl:gap-5 text-xs font-semibold text-slate-700 shrink-0">
+            <nav className="hidden lg:flex items-center gap-4 xl:gap-6 text-xs font-semibold text-slate-700 shrink-0">
               {navLinks.map((link) => (
-                <Link
+                <a
                   key={link.name}
-                  to={link.path}
+                  href={link.path}
+                  onClick={(e) => handleNavClick(e, link.path)}
                   className={`py-1 flex flex-col items-center transition-colors whitespace-nowrap cursor-pointer ${
                     isActive(link.path)
                       ? 'text-slate-950 font-extrabold'
@@ -76,24 +90,25 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEnquiryModal }) => {
                   ) : (
                     <span className="w-1.5 h-1.5 rounded-full bg-transparent mt-0.5" />
                   )}
-                </Link>
+                </a>
               ))}
             </nav>
 
             {/* Right Action: Search Icon & Yellow Enquire Button */}
             <div className="hidden sm:flex items-center gap-3 shrink-0">
-              <Link
-                to="/vehicles"
-                className="p-1.5 text-slate-600 hover:text-slate-950 transition-colors"
-                title="Search inventory"
+              <a
+                href="#vehicles"
+                onClick={(e) => handleNavClick(e, '#vehicles')}
+                className="p-1.5 text-slate-600 hover:text-slate-950 transition-colors cursor-pointer"
+                title="View vehicles fleet"
               >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                 </svg>
-              </Link>
+              </a>
 
               <button
-                onClick={() => onOpenEnquiryModal ? onOpenEnquiryModal() : window.location.href = '/contact'}
+                onClick={() => onOpenEnquiryModal ? onOpenEnquiryModal() : window.open(`https://wa.me/254104480590`, '_blank')}
                 className="bg-[#FFC107] hover:bg-[#FDB813] text-slate-950 font-bold text-xs py-2 px-4 rounded-full inline-flex items-center gap-1.5 shadow-xs transition-transform hover:-translate-y-0.5 cursor-pointer whitespace-nowrap"
               >
                 <span>Enquire Now</span>
@@ -104,15 +119,15 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEnquiryModal }) => {
             {/* Mobile Actions */}
             <div className="flex lg:hidden items-center gap-2">
               <button
-                onClick={() => onOpenEnquiryModal ? onOpenEnquiryModal() : null}
-                className="bg-[#FFC107] text-slate-950 font-bold text-xs py-1.5 px-3 rounded-full"
+                onClick={() => onOpenEnquiryModal ? onOpenEnquiryModal() : window.open(`https://wa.me/254104480590`, '_blank')}
+                className="bg-[#FFC107] text-slate-950 font-bold text-xs py-1.5 px-3 rounded-full cursor-pointer"
               >
                 Enquire
               </button>
 
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="p-2 text-slate-800"
+                className="p-2 text-slate-800 cursor-pointer"
                 aria-label="Toggle menu"
               >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -133,13 +148,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEnquiryModal }) => {
               OUR VEHICLES
             </span>
             <span className="h-px w-10 bg-slate-700" />
-            <Link
-              to="/vehicles"
-              className="text-xs font-bold text-slate-400 hover:text-white transition-colors flex items-center gap-1 group whitespace-nowrap"
+            <a
+              href="#vehicles"
+              onClick={(e) => handleNavClick(e, '#vehicles')}
+              className="text-xs font-bold text-slate-400 hover:text-white transition-colors flex items-center gap-1 group whitespace-nowrap cursor-pointer"
             >
               <span>VIEW ALL</span>
               <span className="group-hover:translate-x-0.5 transition-transform">&rarr;</span>
-            </Link>
+            </a>
           </div>
 
         </div>
@@ -170,10 +186,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEnquiryModal }) => {
 
           <nav className="hidden lg:flex items-center gap-6 text-xs font-semibold text-slate-700">
             {navLinks.map((link) => (
-              <Link
+              <a
                 key={link.name}
-                to={link.path}
-                className={`py-1 flex flex-col items-center transition-colors whitespace-nowrap ${
+                href={link.path}
+                onClick={(e) => handleNavClick(e, link.path)}
+                className={`py-1 flex flex-col items-center transition-colors whitespace-nowrap cursor-pointer ${
                   isActive(link.path)
                     ? 'text-slate-950 font-extrabold'
                     : 'text-slate-600 hover:text-slate-950'
@@ -183,24 +200,24 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEnquiryModal }) => {
                 {isActive(link.path) && (
                   <span className="w-1.5 h-1.5 rounded-full bg-[#0D6EFD] mt-0.5" />
                 )}
-              </Link>
+              </a>
             ))}
           </nav>
 
           <div className="hidden sm:flex items-center gap-4">
-            <Link
-              to="/vehicles"
+            <a
+              href="/#vehicles"
               className="p-1.5 text-slate-600 hover:text-slate-950 transition-colors"
-              title="Search inventory"
+              title="Search fleet"
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
               </svg>
-            </Link>
+            </a>
 
             <button
-              onClick={() => onOpenEnquiryModal ? onOpenEnquiryModal() : window.location.href = '/contact'}
-              className="bg-[#FFC107] hover:bg-[#FDB813] text-slate-950 font-bold text-xs py-2 px-4 rounded-full inline-flex items-center gap-1.5 shadow-xs transition-transform hover:-translate-y-0.5 whitespace-nowrap"
+              onClick={() => onOpenEnquiryModal ? onOpenEnquiryModal() : window.open(`https://wa.me/254104480590`, '_blank')}
+              className="bg-[#FFC107] hover:bg-[#FDB813] text-slate-950 font-bold text-xs py-2 px-4 rounded-full inline-flex items-center gap-1.5 shadow-xs transition-transform hover:-translate-y-0.5 whitespace-nowrap cursor-pointer"
             >
               <span>Enquire Now</span>
               <span className="text-sm font-bold">&rarr;</span>
@@ -209,15 +226,15 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEnquiryModal }) => {
 
           <div className="flex lg:hidden items-center gap-2">
             <button
-              onClick={() => onOpenEnquiryModal ? onOpenEnquiryModal() : null}
-              className="bg-[#FFC107] text-slate-950 font-bold text-xs py-1.5 px-3 rounded-full"
+              onClick={() => onOpenEnquiryModal ? onOpenEnquiryModal() : window.open(`https://wa.me/254104480590`, '_blank')}
+              className="bg-[#FFC107] text-slate-950 font-bold text-xs py-1.5 px-3 rounded-full cursor-pointer"
             >
               Enquire
             </button>
 
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 text-slate-800"
+              className="p-2 text-slate-800 cursor-pointer"
               aria-label="Toggle menu"
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -237,16 +254,16 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEnquiryModal }) => {
       {mobileMenuOpen && (
         <div className="lg:hidden bg-white border-t border-slate-200 px-6 py-4 space-y-2 shadow-xl">
           {navLinks.map((link) => (
-            <Link
+            <a
               key={link.name}
-              to={link.path}
-              onClick={() => setMobileMenuOpen(false)}
-              className={`block py-2 text-sm font-semibold ${
+              href={link.path}
+              onClick={(e) => handleNavClick(e, link.path)}
+              className={`block py-2 text-sm font-semibold cursor-pointer ${
                 isActive(link.path) ? 'text-blue-600 font-bold' : 'text-slate-800'
               }`}
             >
               {link.name}
-            </Link>
+            </a>
           ))}
         </div>
       )}

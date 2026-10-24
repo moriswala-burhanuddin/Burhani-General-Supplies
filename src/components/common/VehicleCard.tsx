@@ -85,9 +85,13 @@ export const VehicleCard: React.FC<VehicleCardProps> = ({ vehicle }) => {
           </div>
 
           <h3 className="text-lg sm:text-xl font-display font-extrabold text-slate-950 tracking-tight leading-snug group-hover:text-[#0D6EFD] transition-colors">
-            <Link to={`/vehicles/${vehicle.slug}`}>
+            <a
+              href={getVehicleEnquiryLink(vehicle.name, priceDisplay)}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               {vehicle.name}
-            </Link>
+            </a>
           </h3>
 
           <p className="mt-1.5 text-xs text-slate-500 line-clamp-2 leading-relaxed font-medium">
@@ -130,22 +134,18 @@ export const VehicleCard: React.FC<VehicleCardProps> = ({ vehicle }) => {
             )}
           </div>
 
-          {/* Action CTAs */}
-          <div className="grid grid-cols-2 gap-2 pt-1">
-            <Link
-              to={`/vehicles/${vehicle.slug}`}
-              className="py-2 px-3 text-center rounded-full border border-slate-200 hover:border-slate-900 text-slate-800 hover:text-slate-950 font-bold text-xs transition-colors"
-            >
-              Details &rarr;
-            </Link>
-
+          {/* Direct WhatsApp Enquiry CTA */}
+          <div className="pt-1">
             <a
               href={getVehicleEnquiryLink(vehicle.name, priceDisplay)}
               target="_blank"
               rel="noopener noreferrer"
-              className="py-2 px-3 text-center rounded-full bg-[#FFC107] hover:bg-[#FDB813] text-slate-950 font-extrabold text-xs shadow-xs transition-transform hover:-translate-y-0.5 inline-flex items-center justify-center gap-1"
+              className="w-full py-3 px-4 text-center rounded-2xl bg-[#FFC107] hover:bg-[#FDB813] text-slate-950 font-black text-xs uppercase tracking-wider shadow-xs transition-transform hover:-translate-y-0.5 flex items-center justify-center gap-2 cursor-pointer"
             >
-              <span>WhatsApp</span>
+              <svg className="w-4 h-4 fill-current text-slate-950" viewBox="0 0 24 24">
+                <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.18-2.587-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86.174.086.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.203c.043.072.043.419-.101.824z"/>
+              </svg>
+              <span>Enquire on WhatsApp</span>
               <span>&rarr;</span>
             </a>
           </div>
