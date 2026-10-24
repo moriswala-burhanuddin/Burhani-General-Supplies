@@ -9,48 +9,40 @@ interface VehicleCardProps {
 }
 
 export const VehicleCard: React.FC<VehicleCardProps> = ({ vehicle }) => {
-  const priceDisplay = formatKes(vehicle.priceKes);
+  const priceDisplay = vehicle.priceKes
+    ? `${vehicle.pricePrefix ? `${vehicle.pricePrefix} ` : ''}KES ${vehicle.priceKes.toLocaleString()}`
+    : 'Request a Quote';
   const previousPriceDisplay = vehicle.previousPriceKes ? formatKes(vehicle.previousPriceKes) : null;
   const savings = (vehicle.previousPriceKes && vehicle.priceKes)
     ? vehicle.previousPriceKes - vehicle.priceKes
     : null;
 
-  // Prefer clean cutout image if available
-  const cutoutMap: Record<string, string> = {
-    'atul-rik-petrol': '/images/atul-rik-Photoroom.png',
-    'atul-gem-paxx': '/images/atul-gem-paxx-Photoroom.png',
-    'kenbo-150-commuter': '/images/kenbo-commuter-Photoroom.png',
-    'delivery-cargo-125': '/images/delivery-motorcycle-Photoroom.png',
-    'atul-shakti-cargo': '/images/cargo-tuktuk-Photoroom.png',
-    'kenbo-cruiser-150': '/images/kenbo-commuter-Photoroom.png'
-  };
-
-  const displayImage = cutoutMap[vehicle.id] || vehicle.imageUrl;
+  const displayImage = vehicle.imageUrl;
 
   return (
     <div className="group bg-white rounded-3xl border border-slate-200/90 overflow-hidden shadow-2xs hover:shadow-lg hover:border-slate-300 transition-all duration-300 flex flex-col justify-between">
       
-      {/* Top Image Stage */}
-      <div className="relative aspect-4/3 overflow-hidden bg-gradient-to-b from-slate-50 to-white flex items-center justify-center p-4 border-b border-slate-100">
+      {/* Top Image Stage with Taller Studio Frame for Cutouts */}
+      <div className="relative h-64 sm:h-72 overflow-hidden bg-gradient-to-b from-slate-50 via-white to-slate-50/70 flex items-center justify-center p-4 border-b border-slate-100">
         
         {/* Subtle Brand Watermark behind cutout */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden">
-          <span className="text-6xl sm:text-7xl font-display font-black tracking-widest text-blue-600/[0.07] uppercase">
-            {vehicle.brand === 'Atul Auto' ? 'ATUL' : 'KENBO'}
+          <span className="text-5xl sm:text-6xl font-display font-black tracking-widest text-slate-900/[0.04] uppercase">
+            {vehicle.brand.toUpperCase()}
           </span>
         </div>
 
         <img
           src={displayImage}
           alt={vehicle.name}
-          className="relative z-10 w-full h-full object-contain drop-shadow-[0_16px_18px_rgba(0,0,0,0.18)] group-hover:scale-106 transition-transform duration-500"
+          className="relative z-10 max-h-full max-w-full object-contain drop-shadow-[0_14px_16px_rgba(0,0,0,0.14)] group-hover:scale-105 transition-transform duration-500"
           loading="lazy"
         />
 
         {/* Category Pill Top Left */}
         <div className="absolute top-3 left-3 flex flex-col gap-1.5 z-20">
           <span className="px-2.5 py-0.5 bg-[#0B111A] text-white text-[9px] font-extrabold uppercase tracking-wider rounded-full shadow-xs">
-            {vehicle.category === 'tuk-tuk' ? '3-Wheeler Tuk-Tuk' : 'Motorcycle'}
+            {vehicle.category === 'tuk-tuk' ? '3-Wheeler' : vehicle.name.toLowerCase().includes('scooter') ? 'Scooter' : 'Motorcycle'}
           </span>
         </div>
 
@@ -94,18 +86,18 @@ export const VehicleCard: React.FC<VehicleCardProps> = ({ vehicle }) => {
             </a>
           </h3>
 
-          <p className="mt-1.5 text-xs text-slate-500 line-clamp-2 leading-relaxed font-medium">
-            {vehicle.shortDesc}
-          </p>
+          {/* DONT ADD DESC: Description paragraph removed completely per user instruction */}
 
           {/* Quick Specs Snippets */}
-          <div className="mt-3 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-600 font-semibold">
-            <span>{vehicle.specs.fuelType?.split(' ')[0]}</span>
-            <span>•</span>
-            <span>{vehicle.specs.seatingCapacity?.split(',')[0]}</span>
-            <span>•</span>
-            <span className="text-[#0D6EFD] font-bold">{vehicle.financingAvailable ? 'Mogo Financing' : 'Cash'}</span>
-          </div>
+          {vehicle.specs && (
+            <div className="mt-3 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-600 font-semibold">
+              <span>{vehicle.specs.fuelType?.split(' ')[0] || 'Official'}</span>
+              <span>•</span>
+              <span>{vehicle.specs.seatingCapacity?.split(',')[0] || 'Coast Spec'}</span>
+              <span>•</span>
+              <span className="text-[#0D6EFD] font-bold">{vehicle.financingAvailable ? 'Mogo Financing' : 'Cash'}</span>
+            </div>
+          )}
         </div>
 
         {/* Pricing Block & Actions */}

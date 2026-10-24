@@ -1,6 +1,6 @@
 import React from 'react';
 import { ShowcaseHero } from '../components/home/ShowcaseHero';
-import { SpecialDealsCard } from '../components/home/SpecialDealsCard';
+import { BrandMarquee } from '../components/home/BrandMarquee';
 import { HowItWorksContact } from '../components/home/HowItWorksContact';
 import { ReadyToFindBanner } from '../components/home/ReadyToFindBanner';
 import { VEHICLES } from '../data/products';
@@ -17,13 +17,11 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenEnquiryModal }) => {
       {/* 1. Exact Showcase Hero Section matching Burhani Kenbo Mtwapa Tuk-Tuk Showcase.png */}
       <ShowcaseHero onOpenEnquiryModal={onOpenEnquiryModal} />
 
+      {/* 2. Sliding Brands Animation Section (Moving Marquee) */}
+      <BrandMarquee />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
         
-        {/* 2. Special Commercial Deals on Selected Fleet */}
-        <div>
-          <SpecialDealsCard />
-        </div>
-
         {/* 3. All Showroom Vehicles & Products Grid (One-Page Catalog with Direct WhatsApp Inquiries) */}
         <section id="vehicles" className="scroll-mt-24 space-y-8">
           
@@ -39,7 +37,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenEnquiryModal }) => {
             </h2>
             
             <p className="text-sm sm:text-base text-slate-500 max-w-2xl font-medium leading-relaxed">
-              Explore Atul 3-wheelers, KENBO commuter bikes, and commercial delivery vehicles. Discover official specifications, pricing, and instant WhatsApp inquiries in Mtwapa.
+              Explore genuine Atul 3-wheelers &amp; cargo tuk-tuks, KENBO motorcycles &amp; electric scooters, Apsonic commercial trikes, and Canda scooters with direct WhatsApp inquiries in Mtwapa.
             </p>
           </div>
 

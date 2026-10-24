@@ -107,3 +107,24 @@
 .arrow-circle:hover {
   transform: scale(1.08);
 }
+
+/* Infinite Sliding Marquee for Brands */
+@keyframes brandMarquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-brand-marquee {
+  display: flex;
+  width: max-content;
+  animation: brandMarquee 26s linear infinite;
+  will-change: transform;
+}
+
+.animate-brand-marquee:hover {
+  animation-play-state: paused;
+}

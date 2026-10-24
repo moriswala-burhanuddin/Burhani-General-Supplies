@@ -6,9 +6,10 @@ export interface Vehicle {
   name: string;
   model: string;
   brand: string;
-  category: 'tuk-tuk' | 'motorcycle';
+  category: VehicleCategory | string;
   isCommercial?: boolean;
   priceKes: number | null; // null means "Request a Quote"
+  pricePrefix?: string; // e.g. "Cash"
   previousPriceKes?: number;
   badge?: string;
   badgeType?: 'offer' | 'popular' | 'commercial' | 'new';
